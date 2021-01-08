@@ -11,7 +11,8 @@ services:
             - ./:/go/pkg/app
         working_dir: /go/pkg/app
         command: >
-            sh -c "go build main.go
+            sh -c "env GOOS=windows GOARCH=amd64 go build main.go &&
+                   env GOOS=linux GOARCH=amd64 go build main.go
                    ./main --filename=\"invoices.csv\""
     mysql:
         container_name: container_mysql
