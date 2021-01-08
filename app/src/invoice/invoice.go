@@ -13,7 +13,7 @@ type RegularInvoice struct {
 	id           string
 	nettAmount   int
 	currency     string
-	exchangeRate float32
+	exchangeRate float64
 }
 
 func (i RegularInvoice) GetId() string {
@@ -28,6 +28,6 @@ func (i RegularInvoice) GetCurrency() string {
 	return i.currency
 }
 
-func MakeRegularInvoice(id string, nettAmount int, currency string, exchangeRate float32) *RegularInvoice {
+func MakeRegularInvoice(id string, nettAmount int, currency string, exchangeRate float64) *RegularInvoice {
 	return &RegularInvoice{id, nettAmount, currency, exchangeRate}
 }

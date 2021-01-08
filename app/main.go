@@ -6,10 +6,13 @@ import (
 )
 
 func main() {
-	i1 := invoice.MakeRegularInvoice("123PLN", 10000, invoice.CurrencyPLN, 1)
-	i2 := invoice.MakeRegularInvoice("123EUR", 10000, invoice.CurrencyEUR, 4.55)
+	pCSV := invoice.CSVParser{}
 
-	invoices := make([]invoice.IInvoice, 0)
+	invoices := pCSV.Parse("invoices.csv")
+
+	i1 := invoice.MakeRegularInvoice("123PLN", 10000, "PLN", 1)
+	i2 := invoice.MakeRegularInvoice("123EUR", 10000, "EUR", 4.55)
+
 	invoices = append(invoices, i1)
 	invoices = append(invoices, i2)
 
