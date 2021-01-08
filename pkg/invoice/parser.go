@@ -23,6 +23,7 @@ func (parser CSVParser) Parse(filename string) []IInvoice {
 
 	if err != nil {
 		fmt.Println(err)
+		panic(fmt.Sprintf("File \"%s\" does not exist", filename))
 	}
 
 	defer csvFile.Close()

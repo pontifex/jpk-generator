@@ -10,7 +10,9 @@ services:
         volumes:
             - ./:/go/pkg/app
         working_dir: /go/pkg/app
-        command: go run main.go
+        command: >
+            sh -c "go build main.go
+                   ./main --filename=\"invoices.csv\""
     mysql:
         container_name: container_mysql
         image: mysql:5.7
