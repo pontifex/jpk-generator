@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./src/invoice"
+	"./pkg/invoice"
 	"fmt"
 )
 

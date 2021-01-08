@@ -8,8 +8,8 @@ services:
         ports:
             - "6060:6060"
         volumes:
-            - ./app/:/go/src/app
-        working_dir: /go/src/app
+            - ./:/go/pkg/app
+        working_dir: /go/pkg/app
         command: go run main.go
     mysql:
         container_name: container_mysql
