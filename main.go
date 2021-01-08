@@ -16,8 +16,8 @@ func main() {
 
 	invoices := pCSV.Parse(*filenamePtr)
 
-	i1 := invoice.MakeRegularInvoice("123PLN", 10000, "PLN", 1)
-	i2 := invoice.MakeRegularInvoice("123EUR", 10000, "EUR", 4.55)
+	i1 := invoice.MakeRegularInvoice("123PLN", 10000, invoice.CurrencyPLN, 1)
+	i2 := invoice.MakeRegularInvoice("123EUR", 10000, invoice.CurrencyEUR, 4.55)
 
 	invoices = append(invoices, i1)
 	invoices = append(invoices, i2)
