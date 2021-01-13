@@ -10,8 +10,6 @@ func main() {
 	filenamePtr := flag.String("filename", "invoices.csv", "Define file with invoices")
 	flag.Parse()
 
-	fmt.Println(*filenamePtr)
-
 	pCSV := invoice.CSVParser{}
 
 	invoices := pCSV.Parse(*filenamePtr)
@@ -25,4 +23,10 @@ func main() {
 	for i := 0; i < len(invoices); i++ {
 		fmt.Println(invoices[i].GetId())
 	}
+
+	gXML := invoice.XMLGenerator{}
+
+	xmlContent := gXML.Generate(invoices)
+
+	fmt.Println(xmlContent)
 }
